@@ -1,0 +1,705 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$background-color: #332D23;
+$pink: #BC435C;
+$light-pink: #AD7F85;
+$black: #0D0D0D;
+$black-background: #292824;
+$light-blue: #84A8A4;
+$white: #E9E9E9;
+$grey: #474747;
+
+@font-face {
+  font-family: 'Pixels';
+  src: url('./assets/FreePixel.ttf');
+}
+
+@mixin box-sizes($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin button-style($text-color, $background-color) {
+  font-size: 1em;
+  color: $text-color;
+  background: $background-color;
+  font-weight: bolder;
+  box-shadow: inset 0 0 0 2px $grey;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+@mixin box-style() {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  color: $light-blue;
+  border: 0.15em dotted $grey;
+  border-radius: 1.6em;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0.4em 0.4em $black;
+}
+
+body {
+  background-color: #332D23;
+  width: 100%;
+  height: 100vh;
+}
+
+.main {
+  background-color: $background-color;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 20em;
+  margin: 1em;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+//home, login e signup
+
+.card-container {
+  width: auto;
+  height: auto;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  @include box-sizes(17em, 24em);
+  @include box-style();
+  margin: 30px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+    border: 0.15em dotted $pink;
+  }
+}
+
+.card-name {
+  font-size: 3em;
+  font-weight: bolder;
+  color: $grey;
+  font-family: 'Pixels';
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+.card-photo {
+  width: 95%;
+  margin: -1em;
+  border-radius: 1em;
+}
+
+.login-page {
+  @include box-sizes(32em, 26em);
+  @include box-style();
+  margin-top: 50px;
+}
+
+.signup-page {
+  @include box-sizes(32em, 37em);
+  @include box-style();
+  margin-top: 50px;
+}
+
+.form-title {
+  margin: 1em;
+}
+
+.form-button {
+  @include button-style($black, $light-blue);
+  @include box-sizes(7em, 2.5em);
+  margin-bottom: 1em;
+  position: relative;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.draw {
+  transition: color 0.20s;
+
+  &::before,
+  &::after {
+    border-radius: 0.5em;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: $pink;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: $pink;
+    border-right-color: $pink;
+    transition:
+      width 0.25s ease-out,
+      height 0.25s ease-out 0.25s;
+  }
+
+  &:hover::after {
+    border-bottom-color: $pink;
+    border-left-color: $pink;
+    transition:
+      border-color 0s ease-out 0.5s,
+      width 0.25s ease-out 0.5s,
+      height 0.25s ease-out 0.75s;
+  }
+}
+
+.form-input,
+.form-select {
+  width: 28em;
+  height: 3em;
+  margin: 0.30em;
+  background: $light-pink;
+  border: none;
+  border-radius: 0.25em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  color: $black;
+  font-size: 0.94em;
+  font-weight: bolder;
+}
+
+.form-labels {
+  align-self: start;
+  margin-left: 2.6em;
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+.errors-message,
+.new-user {
+  color: $pink;
+  font-size: 1.13em;
+  width: auto;
+  height: 1.1em;
+  margin: 0.30em;
+  font-weight: bolder;
+}
+
+.new-user {
+  color: $light-blue;
+  font-size: 0.94em;
+}
+
+.test {
+  color: $light-pink;
+  margin-top: 10em;
+}
+
+//página de menu
+
+.big-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  @include box-sizes(100vw, 8em);
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu-button {
+  @include box-sizes(10em, 2.7em);
+  @include button-style($white, $black);
+  margin: 15px;
+
+  &:hover {
+    background: $light-pink;
+    color: $black;
+  }
+}
+
+.menu-types {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include box-sizes(30em, 8em);
+}
+
+.list-labels {
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  margin-top: 1.5em;
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: auto 40px 150px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: $white;
+  margin-bottom: 25px;
+}
+
+.product-cart {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto 40px 50px 100px;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: $black;
+}
+
+.down-line {
+  border-top: 2px solid $black;
+  grid-row: 2;
+  grid-column: 1/ span 6;
+}
+
+.icon-button {
+  @include box-sizes(2.5em, 2.5em);
+  cursor: pointer;
+}
+
+.errors {
+  @include box-sizes(auto, 3.5em);
+}
+
+.hide {
+  display: none;
+}
+
+.product-info {
+  text-align: center;
+  padding: 1.1em;
+}
+
+.list-label {
+  color: $pink;
+  font-weight: bolder;
+  font-size: 23px;
+  font-family: 'Pixels';
+}
+
+.products-list {
+  @include box-sizes(26em, 32em);
+  @include box-style();
+}
+
+.list-area {
+  @include box-sizes(25em, 36em);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: $black;
+  margin-top: 5%;
+  border: $black;
+  overflow: scroll;
+}
+
+.cart-area {
+  @include box-sizes(35em, 21em);
+  @include box-style();
+  background-color: $light-pink;
+  margin-top: 30px;
+}
+
+.cart-info {
+  @include box-sizes(35em, 6em);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cart-list {
+  @include box-sizes(35em, 18em);
+  overflow: scroll;
+  border-radius: 0.8em;
+  border: none;
+  margin-top: 10px;
+}
+
+.total-area {
+  @include box-sizes(24em, 1em);
+  display: flex;
+  justify-content: space-between;
+  color: $black;
+  font-weight: bolder;
+  font-size: 24px;
+  padding: 25px;
+  margin-bottom: 10px;
+}
+
+.menu-input,
+.menu-select {
+  height: 3em;
+  margin: 0.7em;
+  background: $white;
+  border-color: #1B1A15;
+  border-radius: 0.8em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $black;
+  font-size: 0.94em;
+  font-weight: bolder;
+}
+
+.menu-labels {
+  color: $pink;
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-left: 0.5em;
+  font-family: 'Pixels';
+}
+
+.menu-title {
+  color: $pink;
+  font-size: 2.2em;
+  align-self: center;
+  font-family: 'Pixels';
+}
+
+.quantity {
+  font-size: 20px;
+  color: $black;
+}
+
+.complement-area {
+  @include box-sizes(25em, 19em);
+  @include box-style();
+}
+
+.select-options {
+  @include box-sizes(15em, 2em);
+  font-size: 17px;
+}
+
+//menu-hamburguer
+
+.menu-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.menu-icon {
+  @include box-sizes(2.5em, 2.5em);
+
+  &:hover {
+    transform: scale(1.2)
+  }
+}
+
+.nav-links {
+  margin-right: 50px;
+  position: fixed;
+}
+
+.nav-item {
+  display: none;
+  padding: 10px 10px;
+  position: relative;
+  font-size: 18px;
+  font-weight: bolder;
+  color: $black;
+  width: 125px;
+  font-family: 'Pixels';
+}
+
+.show-item {
+  display: flex;
+  animation: slide 1s;
+  background-color: $light-pink;
+
+  &:hover {
+    background-color: $grey;
+  }
+}
+
+.product-button {
+  background-color: transparent;
+  border: none;
+}
+
+@keyframes slide {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+//kitchen e orders
+
+.nav-page {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 6em;
+  background-color: $grey;
+  border-bottom: 15px solid $black;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.page-labels {
+  color: $light-pink;
+  text-shadow: 2px 2px $black;
+  font-size: 3.2em;
+  padding: 8px;
+  font-weight: bolder;
+  font-family: 'Pixels';
+  margin-left: 0.5em;
+}
+
+.items-labels,
+.order-label {
+  color: $light-pink;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.order-info,
+.order-item {
+  color: $white;
+  padding: 10px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 30px auto auto;
+}
+
+.order-icon {
+  @include box-sizes(3.5em, 3.5em);
+}
+
+.order-card {
+  @include box-sizes(19em, auto);
+  background-color: $black;
+  border-radius: 5px;
+  border: 2px solid $grey;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 48px auto auto 35px;
+  padding: 15px;
+  margin: 8px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.cards-info {
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.order-header {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.order-label {
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: 'Pixels';
+}
+
+.orders-list {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.order-products {
+  color: $white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-button {
+  @include button-style($light-pink, $black-background );
+  @include box-sizes(10em, 2em);
+  margin-bottom: 20px;
+  justify-self: center;
+}
+
+.prepared-status {
+  color: $pink;
+}
+
+.final-status {
+  color: $light-blue;
+}
+
+//responsividade
+
+@media screen and (max-width: 420px) {
+
+  .login-page,
+  .signup-page {
+    width: 22em;
+  }
+
+  .form-input,
+  .form-select {
+    width: 21em;
+  }
+
+  .form-labels {
+    margin-left: 1.5em;
+  }
+
+  .cards {
+    height: 7em;
+    margin: 18px;
+    border: 0.15em dotted $pink;
+  }
+
+  .card-photo {
+    display: none;
+  }
+
+  .card-name {
+    color: $pink;
+  }
+
+  .product-item {
+    grid-template-columns: 178px 40px 132px;
+  }
+
+  .menu-title {
+    display: none;
+  }
+
+  .products-list {
+    width: 23em;
+  }
+
+
+  .list-area {
+    width: 22em;
+  }
+
+  .complement-area {
+    width: 22em;
+  }
+
+  .menu-types {
+    width: 20em;
+  }
+
+  .menu-button {
+    font-size: 0.85em;
+    margin: 8px;
+  }
+
+  .cart-info {
+    width: 22em;
+    height: 12em;
+    margin-top: 20px;
+  }
+
+  .cart-area {
+    width: 22em;
+    margin: 30px 0px;
+  }
+
+  .cart-list {
+    width: 21em;
+  }
+
+  .nav-container {
+    margin-bottom: 10px;
+  }
+
+  .down-line {
+    grid-row: 3;
+  }
+
+  .total-area {
+    width: 15em;
+  }
+
+  .product-cart {
+    grid-template-columns: 150px auto auto 38px 45px 90px;
+  }
+
+  .page-labels {
+    font-size: 2.1em;
+  }
+}
