@@ -1,31 +1,56 @@
-import { URL } from "./localStorage.js";
+import { URL, getToken } from "./localStorage.js";
 
-export const createUser = (endpoint, elements) => {
+export const createUser = (endpoint, items) => {
   return fetch(`${URL}${endpoint}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // "Authorization": getToken(),
     },
     body: JSON.stringify({
-      name: elements.name,
-      email: elements.email,
-      password: elements.password,
-      role: elements.role,
-      restaurant: "Cannabizing Food",
+      name: items.name,
+      email: items.email,
+      password: items.password,
+      role: items.role,
+      restaurant: "Vai Dar Bom!",
     }),
   });
 };
 
-export const loginUser = (endpoint, elements) => {
+export const loginUser = (endpoint, items) => {
   return fetch(`${URL}${endpoint}` , {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email: elements.email,
-      password: elements.password,
+      email: items.email,
+      password: items.password,
     })
   });
 };
+
+export const getProducts = (endpoint) => {
+  return fetch(`${URL}${endpoint}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': getToken()
+    },
+  })
+  .then(res => res.json())
+}
+
+export const sendOrder = (endpoint, orderInfo, addItem) => {
+  return fetch(`${URL}${endpoint}` , {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': getToken()
+    },
+    body: JSON.stringify({
+      client: orderInfo.client,
+      table: orderInfo.table,
+      products: addItem,  
+    })
+  })
+}
