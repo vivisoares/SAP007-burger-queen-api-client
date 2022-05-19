@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from '../pages/login/login.jsx';
-import SignUp from '../pages/signUp/signup.jsx';
+import SignUp from '../pages/signup/signup.jsx';
 import Menu from '../pages/menu/menu.jsx'
 
 //ROTA LOG-ON:

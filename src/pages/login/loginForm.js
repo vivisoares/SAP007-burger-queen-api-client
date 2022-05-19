@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { loginUser } from '../../services/api';
+import { loginUser } from '../../service/api';
 import { useNavigate } from 'react-router-dom';
-import { createTokenAndRole } from '../../services/localStorage';
+import { createTokenAndRole } from '../../service/localStorage';
 
 
 const useFormLogin = () => {

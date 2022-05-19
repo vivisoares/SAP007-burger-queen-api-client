@@ -3,7 +3,7 @@
     background-color: #272829;
     background-image: url('../../img/background.jpg');
     background-size: cover;
-    top: 0;
+    top: -250px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -104,7 +104,7 @@
       background-repeat: no-repeat;
     }
     .root {
-      margin-right: 10%;
+      top: -300px;
     }
     .logo {
       height: 4.5rem;

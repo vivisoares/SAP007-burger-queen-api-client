@@ -1,17 +1,17 @@
 import React from 'react';
 
-import useFormSignup from './useSignupForm';
+import UseFormSignup from './useSignupForm';
 
 import logo from '../../img/logo.png'
-import styles from '../login/login-signup.modules.css'
+import styles from '../login/login-signup.module.css'
 
 const SignUp = () => {
-  const { handleChange, handleSubmit, error } = useFormSignup();
+  const { handleChange, handleSubmit, error } = UseFormSignup();
   return (
     <div className={styles.root}>
       <main className={styles.main}>
         <picture>
-          <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
+          <img src={logo} alt='logo' className={styles.logo} />
         </picture>
         <form>
           <h2 className={styles.formTitle}>Cadastro</h2>
