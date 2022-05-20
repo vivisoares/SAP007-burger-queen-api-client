@@ -1,10 +1,10 @@
 @import './pages/login/login-signup.module.css';
 
 :root {
-    --default-font-color: #ffffff;
-    --secondy-font-color: #8c8c8c;
-    --background-cards: #962596;
-    --default-background: #0d0c0c;
+    --default-font-color: #3C733F;
+    --secondy-font-color: #bf2a2a;
+    --background-cards: #F2A03D;
+    --default-background: #51168c;
 }
 
 * {
