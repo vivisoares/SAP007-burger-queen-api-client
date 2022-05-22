@@ -16,8 +16,8 @@ const Login = () => {
         <picture>
           <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
         </picture>
-        <form>
-          <h2 className={styles.formTitle}>Login</h2>
+        <form className={styles.adjusts}>
+          <h2 className={styles.formTitle}>LOGIN</h2>
           <input className={styles.inputForm} type='email' name='email' placeholder='E-mail' autoComplete='off' onChange={handleChange}/>
           <input className={styles.inputForm} type='password' name='password' placeholder='Senha' onChange={handleChange}/>
           <span className={styles.errorMessage}>{error}</span>

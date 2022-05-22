@@ -3,10 +3,10 @@
   background-color: var(--background-color-home);
   background-image: url('../../img/background.jpg');
   background-size: cover;
-  top: 0;
+  top: 1rem;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: -5rem;
   position: absolute;
   z-index: -1;
 }
@@ -32,30 +32,43 @@
 .logo {
   height: 3.5rem;
   margin-bottom: 2rem;
+  margin-right: 20rem;
+}
+
+.adjusts {
+  margin-right: 3rem;
 }
 
 .formTitle {
   margin-bottom: 1rem;
   align-self: flex-start;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: .2rem;
+  color: #aa4b4b;
 }
 
 .inputForm,
 .selectForm {
   height: 2rem;
-  background-color: transparent;
+  background-color: rgb(255, 255, 255);
   outline: none;
   border: 0.1rem solid var(--secondy-font-color);
   border-radius: 0.3rem;
   margin-bottom: 0.5rem;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  width: 100%;
 }
 
 .selectForm {
   width: 8rem;
+  background-color:#aa4b4bd2;
+  color: #fff;
 }
 
 .selectForm:hover {
-  background-color: #4b4b4b;
+  background-color: #aa4b4bd2;
+  color: #fff;
 }
 
 .optionSelectForm {
@@ -68,7 +81,10 @@
 }
 
 .errorMessage {
-  margin-bottom: 0.5rem;
+  bottom: 1rem;
+  margin-right: 1rem;
+  font-size: 0.85rem;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .btnLogin,
@@ -76,7 +92,7 @@
 .btnRegister {
   height: 2rem;
   width: 8rem;
-  background-color: #4b4b4b;
+  background-color: #d19336d2;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -84,6 +100,9 @@
 
 .btnLogin {
   align-self: flex-end;
+  margin-top: 0.5rem;
+  background-color: #509e5791;
+  color: rgb(0, 0, 0);
 }
 
 .gotToRegistration {
@@ -95,16 +114,23 @@
 
 .textGotToRegistration,
 .textGotToLogin {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   margin-right: 1rem;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .btnRetornLogin {
   align-self: flex-end;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 12rem;
   cursor: pointer;
-  background: none;
+  height: 1.5rem;
+  font-size: 0.85rem;
+  width: 8rem;
+  background-color: #509e5791;
   border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 @media only screen and (min-width:769px) {
@@ -114,6 +140,7 @@
   }
   .root {
     margin-right: 10%;
+    top: -250px;
   }
   .logo {
     height: 4.5rem;

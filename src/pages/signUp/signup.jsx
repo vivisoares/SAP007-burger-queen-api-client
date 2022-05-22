@@ -15,10 +15,10 @@ const SignUp = () => {
         <picture>
           <img src={logo} alt='Logotipo Vai Dar Bom' className={styles.logo} />
         </picture>
-        <form>
-          <h2 className={styles.formTitle}>Cadastro</h2>
+        <form className={styles.adjusts}>
+          <h2 className={styles.formTitle}>CADASTRO</h2>
           <input className={styles.inputForm} type='text' name='name' placeholder='Nome completo' autoComplete='off' onChange={handleChange}/>
-          <input className={styles.inputForm} type='email' placeholder='username@example.com' name='email' autoComplete='off' onChange={handleChange}/>
+          <input className={styles.inputForm} type='email' placeholder='usuario@exemplo.com' name='email' autoComplete='off' onChange={handleChange}/>
           <input className={styles.inputForm} type='password' placeholder='Senha' name='password' onChange={handleChange} />
           <span className={styles.errorMessage}>{error}</span>
           <div className={styles.registrationSection}>
@@ -29,7 +29,7 @@ const SignUp = () => {
             </select>
             <button className={styles.btnRegister} type='submit' onClick={handleSubmit}>Cadastrar</button> 
           </div>
-          <button className={styles.btnRetornLogin} onClick={() => { navigate('/login') }}> Voltar ao Login</button> 
+          <button className={styles.btnRetornLogin} onClick={() => { navigate('/login') }}> Entrar </button> 
         </form>
       </main>
     </div>

@@ -34,7 +34,7 @@ const Menu = () => {
             <MenuHamburguer />
           </div>
           <picture>
-            <img src={logo} alt='Logotipo Vai Dar Bom' className={styles.logo} />
+            <img src={logo} alt='' className={styles.logo} />
           </picture>
         </nav>
         <section className={styles.attendantTabe}>
@@ -79,24 +79,24 @@ const Menu = () => {
           </section>
           <section className={styles.orderSection}>
             <div className={styles.orderSectionTitle}>
-              <h3>Pedido</h3>
+              <h4>PEDIDO</h4>
             </div>
             <div className={styles.clientInformation}>
               <input className={styles.clientName} type='text' placeholder='CLIENTE' name='client' 
               autoComplete='off' onChange={handleOrderChange} value={orderInfo.client}/>
               <select className={styles.clientTable} autoComplete='off' 
               name='table' onChange={handleOrderChange} value={orderInfo.table}>
-                <option value=''>MESA</option>
-                <option value='1'>Mesa 1</option>
-                <option value='2'>Mesa 2</option>
-                <option value='3'>Mesa 3</option>
-                <option value='4'>Mesa 4</option>
-                <option value='5'>Mesa 5</option>
-                <option value='6'>Mesa 6</option>
-                <option value='7'>Mesa 7</option>
-                <option value='8'>Mesa 8</option>
-                <option value='9'>Mesa 9</option>
-                <option value='10'>Mesa 10</option>
+                <option value='0'>MESA</option>
+                <option value='1'>MESA 1</option>
+                <option value='2'>MESA 2</option>
+                <option value='3'>MESA 3</option>
+                <option value='4'>MESA 4</option>
+                <option value='5'>MESA 5</option>
+                <option value='6'>MESA 6</option>
+                <option value='7'>MESA 7</option>
+                <option value='8'>MESA 8</option>
+                <option value='9'>MESA 9</option>
+                <option value='10'>MESA 10</option>
               </select>
             </div>
             <ul>
