@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { getOrders, updateOrderStatus } from "../../services/api";
-import { getRole } from "../../Local/localStorageAndURL";
+import { getOrders, updateOrderStatus } from "../../service/api.js";
+import { getRole } from "../../service/localStorage.js";
 
 const useOrder = () => {
     const [orders, setOrders] = useState([]);
     const [orderStatus, setOrderStatus] = useState([]);
+    const [error, setError] = useState('');
   
     const sortById = (data) => {
       return data.sort((a, b) => {
@@ -23,10 +24,11 @@ const useOrder = () => {
     };
   
     const handleStatus = (elem) => {
-      if (getRole() === 'attendent') {
+      if (getRole() === 'attendant') {
         updateOrderStatus('/orders/', elem.id, 'servido')
         .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'servido' }]));
       } else {
+        setError('Apenas o(a) atendente pode servir o pedido');
         console.log('Apenas um atendente pode servir os pedidos')
       }
       
@@ -36,6 +38,7 @@ const useOrder = () => {
       getData,
       ordersFiltered,
       handleStatus,
+      error,
     };
   };
   

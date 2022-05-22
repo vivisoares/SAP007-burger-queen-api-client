@@ -1,4 +1,4 @@
-import useProducts  from './useProducts'; 
+import useProducts  from './useProducts';
 import ProductCards from '../../components/productInfos';
 import Cart from '../../components/cart';
 import ResultPrice from '../../components/resultPrice';
@@ -13,16 +13,18 @@ const Menu = () => {
   const { 
     handleButtonTypeClick,
     productsFiltered,
-    productsType,
-    handleSelectFlavor,
-    handleSelectComplement,
     handleAddItem,
+    handleSelectComplement,
+    handleSelectFlavor,
+    handleDeleteProducts,
     handleSendToKitchen,
     handleOrderChange,
+    productsType,
     total,
-    items
+    items,
+    orderError,
   } = useProducts();
-
+  
   return (
     <div className={styles.root}>
       <main>
@@ -105,6 +107,7 @@ const Menu = () => {
                   price={item.price}
                   qtd={item.qtd} 
                   type={item.sub_type}
+                  onClick={() => handleDeleteProducts(item)}
                   />
                 )
               })}
@@ -114,6 +117,7 @@ const Menu = () => {
                 <h4>SUB-TOTAL</h4>
                 <ResultPrice value={total} />
               </div>
+              <p className={styles.orderError}>{orderError}</p>
               <button className={styles.finalizeOrder} onClick={handleSendToKitchen}>Finalizar pedido</button>
             </section>
           </section>

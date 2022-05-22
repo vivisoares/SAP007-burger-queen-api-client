@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProducts, sendOrder } from "../../service/api";
-import { getRole } from '../../service/localStorage'
-
+import { getRole } from '../../service/localStorage.js'
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [items, setItems] = useState([]);
-  const [productsType, setProductsType] = useState();
+  const [productsType, setProductsType] = useState('breakfast');
   const [flavor, setFlavor] = useState();
   const [complement, setComplement] = useState('');
   const [total, setTotal] = useState(0);
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
-
+  const [orderError, setOrderError] = useState('');
 
   const getData = async () => {
     const data = await getProducts('/products');
@@ -19,7 +18,7 @@ const useProducts = () => {
   };
 
   useEffect(() => {
-    getData();
+    getData()
   }, []);
 
   const handleButtonTypeClick = (e) => {
@@ -28,8 +27,18 @@ const useProducts = () => {
   const handleSelectFlavor = (e) => setFlavor(e.target.value);
   const handleSelectComplement = (e) => setComplement(e.target.value);
 
+  const handleAddItem = (product) => {
+    const productIndex = items.findIndex((item) => item.id === product.id)
+    if(productIndex === -1) {
+      setItems([...items, {...product, qtd: 1}])
+    } else {
+      items[productIndex].qtd += 1
+      setItems([...items])
+    }
+  }
+
   const productsFiltered = () => {
-    if (productsType === 'breakfast') {
+    if(productsType === 'breakfast') {
       return products.filter((elem) => elem.type === 'breakfast')
     } else if( productsType === 'hamburguer') {
       let filterHamburguer = products.filter((elem) => elem.flavor === flavor);
@@ -37,24 +46,14 @@ const useProducts = () => {
         filterHamburguer = filterHamburguer.filter((elem) => elem.complement === complement)
       }
       return filterHamburguer;
-    } else if (productsType === 'side' || productsType === 'drinks') {
+      // return products.filter((elem) => elem.sub_type === 'hamburguer')
+      // return products.filter((elem) => elem.id === 33 || elem.id === 42)
+    } else if( productsType === 'side' || productsType === 'drinks') {
       return products.filter((elem) => elem.sub_type === productsType)
-    } 
+    }
+    console.log(products)
     return []
   }
-
-  const handleAddItem = (product) => {
-    const productIndex = items.findIndex((item) => {
-      return item.id === product.id
-    })
-    if(productIndex === -1) {
-      setItems([...items, {...product, qtd: 1}])
-    } else {
-      items[productIndex].qtd += 1
-      setItems([...items])
-      
-    }  
-  };
 
   const handleDeleteProducts = (elem) => {
     const foundItem = items.findIndex((item) => item.id === elem.id);
@@ -99,25 +98,32 @@ const useProducts = () => {
   };
 
   const handleSendToKitchen = () => {
-    if (getRole() === 'attendent') {
+    if (getRole() === 'attendant') {
       sendOrder('/orders', orderInfo, items)
         .then((res => res.json()))
         .then((data) => {
           if (data.code === 400) {
-            console.log('Preencha os campos com as informações do cliente');
+            setOrderError('Preencher nome e mesa do cliente')
           } else {
-            console.log('Pedido enviado para a cozinha com sucesso');
             setItems([]);
           }
         });
     }
   };
 
-
-
-
-
-
-  return { handleButtonTypeClick, productsFiltered, handleAddItem, handleSelectFlavor, handleDeleteProducts, handleSelectComplement, handleSendToKitchen, handleOrderChange, productsType, items, total }
+  return {
+    handleButtonTypeClick,
+    productsFiltered,
+    handleAddItem,
+    handleSelectFlavor,
+    handleDeleteProducts,
+    handleSelectComplement,
+    handleSendToKitchen,
+    handleOrderChange,
+    productsType,
+    items,
+    total,
+    orderError,
+  }
 };
 export default useProducts;

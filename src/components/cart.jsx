@@ -1,20 +1,30 @@
-import React from "react";
+import React from 'react';
+import cancel from '../img/cancel.png';
+import styles from './components.module.css';
 
-const Cart = ({ name, flavor, complement, price, qtd, onClick}) => {
-    return (
-        <section className='card-cart'>
-            <ul className='items'>
-                <li className='item-name'>{name}</li>
-                <section className='add-item'>
-                <li  className='flavor' value='sabor'>Sabor: {flavor}</li>
-                <li className='complement' name='complemento'>Complemento: {`${complement !== null ? complement : '' }`}</li>
-                </section>
-                <li>Preço: R${price},00</li>
-                <li>Quantidade: {qtd} </li>
-            </ul>
-          <button className='add-btn' onClick={onClick}>Excluir item</button>
-        </section>
-    );
+const Cart = ({ name, flavor, complement, price, qtd, type, onClick }) => {
+  return (
+    <li className={styles.order}>
+      <div className={styles.orderContainer}>
+        <p>{qtd}</p>
+        <div className={styles.orderInformation}>
+          <h4>{name}</h4>
+          {type === 'hamburguer' ? (
+            <section>
+              <p value='sabor'>- {flavor}</p>
+              <p name='complemento'>- {`${complement !== null ? complement : ''}`}</p>
+            </section>
+          ) : ''}
+        </div>
+      </div>
+      <div className={styles.priceContainerAndDelete}>
+        <p>R${price},00</p>
+        <button className={styles.deleteItem} onClick={onClick}>
+          <img src={cancel} alt='Botão de excluir item' />
+        </button>
+      </div>
+    </li>
+  );
 };
 
 export default Cart;
