@@ -1,9 +1,9 @@
-import React from "react";
-import { useEffect } from "react";
-import useKitchen from "./useKitchen.js";
-import OrderCard from "../../components/orderCards";
+import React from 'react';
+import { useEffect } from 'react';
+import useKitchen from './useKitchen.js';
+import OrderCard from '../../components/orderCards';
 import styles from './kitchen-order.module.css';
-import MenuHamburguer from "../../components/burgerMenu";
+import MenuHamburguer from '../../components/burgerMenu';
 import logo from '../../img/logo.png';
 
 const Kitchen = () => {
@@ -20,12 +20,12 @@ const Kitchen = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       return getData();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (orderStatus.status === "finalizado") {
+    if (orderStatus.status === 'finalizado') {
       return orderStatus.map((order) => {
         const foundOrder = orders
           .map((elem) => elem)
@@ -49,7 +49,7 @@ const Kitchen = () => {
               <MenuHamburguer />
             </div>
             <picture>
-              <img src={logo} alt="Logo Vai Dar Bom" className={styles.logo} />
+              <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
             </picture>
           </section>
         </nav>

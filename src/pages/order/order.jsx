@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useOrder from "./useOrder.js";
 import OrderCard from "../../components/orderCards";
 import styles from '../kitchen/kitchen-order.module.css';
-import MenuHamburguer from "../../components/burgerMenu"
+import MenuHamburguer from "../../components/burgerMenu";
 import logo from '../../img/logo.png';
 
 const Order = () => {
@@ -10,7 +10,7 @@ const Order = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       return getData();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

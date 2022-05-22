@@ -13,7 +13,7 @@ const SignUp = () => {
     <div className={styles.root}>
       <main className={styles.main}>
         <picture>
-          <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
+          <img src={logo} alt='Logotipo Vai Dar Bom' className={styles.logo} />
         </picture>
         <form>
           <h2 className={styles.formTitle}>Cadastro</h2>
@@ -27,10 +27,10 @@ const SignUp = () => {
               <option className={styles.optionSelectForm} value='attendant'>Atendente</option>
               <option className={styles.optionSelectForm} value='chef'>Chef de Cozinha</option>
             </select>
-            <button className={styles.btnRegister} type='submit' onClick={handleSubmit}>Cadastrar</button>
+            <button className={styles.btnRegister} type='submit' onClick={handleSubmit}>Cadastrar</button> 
           </div>
+          <button className={styles.btnRetornLogin} onClick={() => { navigate('/login') }}> Voltar ao Login</button> 
         </form>
-        <button className={styles.textGotToLogin} onClick={() => { navigate('/login') }}>Fazer Login</button>
       </main>
     </div>
   );

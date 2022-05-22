@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getProducts, sendOrder } from "../../service/api";
+import { useEffect, useState } from 'react';
+import { getProducts, sendOrder } from '../../service/api';
 import { getRole } from '../../service/localStorage.js'
 
 const useProducts = () => {
@@ -106,8 +106,13 @@ const useProducts = () => {
             setOrderError('Preencher nome e mesa do cliente')
           } else {
             setItems([]);
+            setOrderError('');
+            setOrderInfo({ client: '', table: '' });
+
           }
         });
+    } else {
+      setOrderError ('Apenas o/a atendente fazer um pedido')
     }
   };
 
@@ -124,6 +129,7 @@ const useProducts = () => {
     items,
     total,
     orderError,
+    orderInfo,
   }
 };
 export default useProducts;
