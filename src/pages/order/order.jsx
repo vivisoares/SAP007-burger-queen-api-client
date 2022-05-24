@@ -23,7 +23,7 @@ const Order = () => {
                 <MenuHamburguer />
               </div>
               <picture>
-                <img src={logo} alt="Logotipo Vai Dar Bom" className={styles.logo} />
+                <img src={logo} alt="no ponto certo" className={styles.logo} />
               </picture>
             </section>
           </nav>
