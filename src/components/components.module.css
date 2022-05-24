@@ -63,7 +63,7 @@
   content: '';
   height: 3px;
   width: 37px;
-  background-color: var(--white);
+  background-color: var(--default-font-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 12px;

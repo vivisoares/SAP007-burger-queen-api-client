@@ -27,7 +27,7 @@ const BurgerMenu = () => {
               </li>
             )}
             <li>
-              <button onClick={() => { navigate('/order') }}>PEDIDOS PRONTOS</button>
+              <button onClick={() => { navigate('/order') }}>PEDIDOS</button>
             </li>
             <li className={styles.logoutButton}>
               <button onClick={() => {
