@@ -1,18 +1,18 @@
 .root::before {
   content: '';
-  background-color: var(--background-color-home);
+  background-color: var(--white);
   background-image: url('../../img/background.jpg');
   background-size: cover;
-  top: 1rem;
+  top: 0;
   right: 0;
   bottom: 0;
-  left: -5rem;
+  left: 0;
   position: absolute;
   z-index: -1;
 }
 
 .root {
-  height: 100vh;
+  height: 95vh;
   margin-right: 5%;
   display: flex;
   justify-content: flex-end;
@@ -32,10 +32,11 @@
 .logo {
   height: 3.5rem;
   margin-bottom: 2rem;
-  margin-right: 20rem;
 }
 
 .adjusts {
+  display: flex;
+  flex-direction: column;
   margin-right: 3rem;
 }
 
@@ -44,7 +45,7 @@
   align-self: flex-start;
   font-family: 'Work Sans', sans-serif;
   letter-spacing: .2rem;
-  color: #aa4b4b;
+  color: var(--four);
 }
 
 .inputForm,
@@ -57,17 +58,19 @@
   margin-bottom: 0.5rem;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
-  width: 100%;
 }
 
 .selectForm {
-  width: 8rem;
-  background-color:#aa4b4bd2;
+  width: 9rem;
+  height: auto;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  background-color:var(--role);
   color: #fff;
 }
 
 .selectForm:hover {
-  background-color: #aa4b4bd2;
+  background-color: var(--role);
   color: #fff;
 }
 
@@ -92,7 +95,7 @@
 .btnRegister {
   height: 2rem;
   width: 8rem;
-  background-color: #d19336d2;
+  background-color: var(--seven);
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -101,8 +104,8 @@
 .btnLogin {
   align-self: flex-end;
   margin-top: 0.5rem;
-  background-color: #509e5791;
-  color: rgb(0, 0, 0);
+  background-color: var(--four);
+  color: var(--white);
 }
 
 .gotToRegistration {
@@ -127,7 +130,8 @@
   height: 1.5rem;
   font-size: 0.85rem;
   width: 8rem;
-  background-color: #509e5791;
+  background-color: var(--four);
+  color: var(--white);
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -135,12 +139,12 @@
 
 @media only screen and (min-width:769px) {
   .root::before {
-    background-size: contain;
     background-repeat: no-repeat;
   }
   .root {
     margin-right: 10%;
     top: -250px;
+    height: 90vh;
   }
   .logo {
     height: 4.5rem;

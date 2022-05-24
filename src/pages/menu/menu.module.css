@@ -7,13 +7,12 @@
   left: 0;
   position: absolute;
   z-index: -1;
-  font-family: 'Work Sans', sans-serif;
 }
 
 .navBar {
   height: 4rem;
   width: 100%;
-  background-color: var(--default-background);
+  background-color: var(--six);
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -27,15 +26,13 @@
 .logo {
   width: 10rem;
   margin-top: 0.3rem;
-  margin-right: 4.5rem;
+  margin-right: 1rem;
 }
 
 .attendantTabe {
-  height: 100vh;
-  margin: 0.8rem;
+  height: 84vh;
+  margin: 0.5rem;
   display: flex;
-  margin-right: 6rem;
-  font-family: 'Work Sans', sans-serif;
 }
 
 .orderingTab {
@@ -44,9 +41,11 @@
 
 .orderSelection {
   height: 2rem;
-  border: 0.1rem solid var(--secondy-font-color);
+  border: 0.1rem solid var(--four);
   border-radius: 0.3rem;
-  box-shadow: .125rem .125rem .125rem var(--default-background);
+  background-color: var(--lightrole);
+  color: var(--black);
+  box-shadow: .125rem .125rem .125rem var(--four);
   display: flex;
   justify-content: space-around;
 }
@@ -54,10 +53,11 @@
 .selectionButton {
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .flavorAndComplementSelection {
-  width: 55%;
+  width: 100%;
   margin-top: 0.3rem;
   display: inline-flex;
   justify-content: space-between;
@@ -71,18 +71,16 @@
 }
 
 .selectComplement {
-  width: 55%;
+  width: 100%;
   font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
 }
 
+.noComplement,
 .cheeseComplement,
 .eggComplement {
   margin-right: 0.3rem;
-}
-
-.eggComplement {
   margin-left: 0.5rem;
 }
 
@@ -101,9 +99,9 @@
 .orderSectionTitle {
   height: 2.2rem;
   border-radius: 0.3rem;
-  background-color: var(--background-cards);
+  background-color: var(--six);
   padding-left: 0.5rem;
-  box-shadow: 2px 2px 2px var(--default-background);
+  box-shadow: 2px 2px 2px var(--lightsix);
   display: flex;
   align-items: center;
 }
@@ -127,6 +125,10 @@
   width: 100%;
   padding-left: 0.5rem;
   margin-right: 0.4rem;
+}
+
+.clientTable {
+  cursor: pointer;
 }
 
 .clientTable option,
@@ -165,8 +167,10 @@
   border-radius: 0.3rem;
   padding: 0 0.5rem;
   margin-top: 0.5rem;
-  background-color: var(--background-cards);
-  box-shadow: 2px 2px 2px var(--default-background);
+  background-color: var(--six);
+  box-shadow: 2px 2px 2px var(--lightsix);
+  cursor: pointer;
+  color: var(--black);
 }
 
 @media only screen and (min-width:769px) {
@@ -174,7 +178,7 @@
     height: 3rem;
   }
   .selectionButton {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .productList {
     margin-top: 2rem;
@@ -186,7 +190,6 @@
   .selectFlavor,
   .selectComplement {
     font-size: 1rem;
-    font-family: 'Work Sans', sans-serif;
   }
   .orderSectionTitle {
     height: 3.2rem;

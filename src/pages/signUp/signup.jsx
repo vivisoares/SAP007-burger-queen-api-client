@@ -13,12 +13,12 @@ const SignUp = () => {
     <div className={styles.root}>
       <main className={styles.main}>
         <picture>
-          <img src={logo} alt='Logotipo Vai Dar Bom' className={styles.logo} />
+          <img src={logo} alt='Logotipo No Ponto Certo' className={styles.logo} />
         </picture>
-        <form className={styles.adjusts}>
-          <h2 className={styles.formTitle}>CADASTRO</h2>
+        <form>
+          <h2 className={styles.formTitle}>Cadastro</h2>
           <input className={styles.inputForm} type='text' name='name' placeholder='Nome completo' autoComplete='off' onChange={handleChange}/>
-          <input className={styles.inputForm} type='email' placeholder='usuario@exemplo.com' name='email' autoComplete='off' onChange={handleChange}/>
+          <input className={styles.inputForm} type='email' placeholder='username@example.com' name='email' autoComplete='off' onChange={handleChange}/>
           <input className={styles.inputForm} type='password' placeholder='Senha' name='password' onChange={handleChange} />
           <span className={styles.errorMessage}>{error}</span>
           <div className={styles.registrationSection}>

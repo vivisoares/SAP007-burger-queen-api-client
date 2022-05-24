@@ -14,7 +14,6 @@ const Kitchen = () => {
     handleStatus,
     orders,
     orderStatus,
-    error,
   } = useKitchen();
 
   useEffect(() => {
@@ -49,7 +48,7 @@ const Kitchen = () => {
               <MenuHamburguer />
             </div>
             <picture>
-              <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
+              <img src={logo} alt='Logotipo Vai Dar Bom' className={styles.logo} />
             </picture>
           </section>
         </nav>
@@ -65,9 +64,8 @@ const Kitchen = () => {
                   table={elem.table}
                   status={elem.status}
                   createdAt={elem.createdAt}
-                  onClick={() => handleStatus(elem)}
+                  onClick={ () => handleStatus(elem)}
                   products={product}
-                  error={error}
                 />
               </li>
             );

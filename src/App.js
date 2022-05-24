@@ -1,5 +1,5 @@
 import React from 'react';
-import AllRoutes from './routes/routes';
+import AllRoutes from './routes/route';
 
 const App = () => <AllRoutes />
 

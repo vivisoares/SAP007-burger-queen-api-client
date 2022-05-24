@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getRole } from '../service/localStorage';
 import styles from './components.module.css';
 
-const MenuHamburguer = () => {
+const BurgerMenu = () => {
   const navigate = useNavigate();
   const [active, setMode] = useState(false);
   const ToggleMode = () => {
@@ -43,4 +43,4 @@ const MenuHamburguer = () => {
   );
 };
 
-export default MenuHamburguer;
+export default BurgerMenu;

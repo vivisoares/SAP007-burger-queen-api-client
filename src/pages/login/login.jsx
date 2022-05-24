@@ -14,7 +14,7 @@ const Login = () => {
     <div className={styles.root}>
       <main className={styles.main}>
         <picture>
-          <img src={logo} alt='Logo Vai Dar Bom' className={styles.logo} />
+          <img src={logo} alt='Logo No Ponto Certo' className={styles.logo} />
         </picture>
         <form className={styles.adjusts}>
           <h2 className={styles.formTitle}>LOGIN</h2>

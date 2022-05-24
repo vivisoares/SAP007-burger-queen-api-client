@@ -1,6 +1,8 @@
+import React from 'react';
+
 const ResultPrice = (total) => {
   return (
-    <article className="total-area">
+    <article>
       <p>R$ {total.value},00</p>
     </article>
   );

@@ -1,13 +1,27 @@
 @import './components/components.module.css';
+@import './pages/login/login-signup.module.css';
+@import './pages/kitchen/kitchen-order.module.css';
+@import './pages/menu/menu.module.css';
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
 :root {
-    --default-font-color: #ffffff;
-    --secondy-font-color: #8c8c8c;
-    --background-cards: #303030;
-    --background-color-home: #272829;
-    --default-background: #0d0c0c;
-    --default-red: #e23c2e;
+    --black: #292929;
+    --white: #dddcd4;
+    --seven: #F2AA52;
+    --one: #BF5E3B;
+    --two: #BF3056; 
+    --three: #D98841;
+    --four: #BF3056;
+    --role: #0e5d2296;
+    --lightrole: #bf30562c;
+    --lighttrole: #bf30562c;
+    --six: #ec903f;
+    --lightsix: #fcf4df;
+    --background-cards: #fff7dc;
+    --background-bgr: #ebe7c5;
+    --background-color-home: #f3eeae52; 
+    --default-background: #ffd485a1;
+    --default-red: #c5483c;
     --default-green: #309746;
 }
 

@@ -6,7 +6,7 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [items, setItems] = useState([]);
   const [productsType, setProductsType] = useState('breakfast');
-  const [flavor, setFlavor] = useState();
+  const [flavor, setFlavor] = useState('');
   const [complement, setComplement] = useState('');
   const [total, setTotal] = useState(0);
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
@@ -46,8 +46,6 @@ const useProducts = () => {
         filterHamburguer = filterHamburguer.filter((elem) => elem.complement === complement)
       }
       return filterHamburguer;
-      // return products.filter((elem) => elem.sub_type === 'hamburguer')
-      // return products.filter((elem) => elem.id === 33 || elem.id === 42)
     } else if( productsType === 'side' || productsType === 'drinks') {
       return products.filter((elem) => elem.sub_type === productsType)
     }
@@ -106,13 +104,12 @@ const useProducts = () => {
             setOrderError('Preencher nome e mesa do cliente')
           } else {
             setItems([]);
+            setFlavor('');
+            setComplement('');
             setOrderError('');
             setOrderInfo({ client: '', table: '' });
-
           }
         });
-    } else {
-      setOrderError ('Apenas o/a atendente fazer um pedido')
     }
   };
 
@@ -130,6 +127,7 @@ const useProducts = () => {
     total,
     orderError,
     orderInfo,
+    flavor,
   }
 };
 export default useProducts;

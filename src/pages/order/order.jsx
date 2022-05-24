@@ -10,7 +10,7 @@ const Order = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       return getData();
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -23,7 +23,7 @@ const Order = () => {
                 <MenuHamburguer />
               </div>
               <picture>
-                <img src={logo} alt="Logo Vai Dar Bom" className={styles.logo} />
+                <img src={logo} alt="Logotipo Vai Dar Bom" className={styles.logo} />
               </picture>
             </section>
           </nav>
@@ -41,7 +41,7 @@ const Order = () => {
                   createdAt={elem.createdAt}
                   updatedAt={elem.updatedAt}
                   onClick={() => handleStatus(elem)}
-                  nameButton={"Servir pedido"}
+                  nameButton={'Servir pedido'}
                   products={product}
                   error={error}
                 />
